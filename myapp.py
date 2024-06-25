@@ -36,7 +36,8 @@ class Usuarios:
     def eliminar_contacto(self,id_contacto):
         self.cursor.execute(f"DELETE FROM contactos WHERE id_contacto={id_contacto}")
         self.conexion.commit()
-        return self.cursor.rowcount() > 0
+        return self.cursor.rowcount > 0
+      
 
 # ------------------------------------------------------
 # programa principal
@@ -61,7 +62,7 @@ CORS(app)
 
 @app.route('/')
 def home():
-    return render_template('prueba.html', title='Prueba Flask', 
+    return render_template('home.html', title='Prueba Flask', 
     heading='Bienvenido a Codo a Codo Gaming', subtitulo="CRUD", items=['Create','Read','Update','Delete'])
 
 # listar todos los contactos
@@ -93,6 +94,7 @@ def agregar_contacto():
         suscripcion = 0
 
     nuevo_id_contacto= usuarios.agregar_contacto(gamertag,email,telefono,motivo,mensaje,suscripcion)
+
     if nuevo_id_contacto:
         return jsonify({"mensaje":"El nuevo contacto se agrego correctamente","codigo":nuevo_id_contacto}), 201
     else:
@@ -109,12 +111,13 @@ def modificar_contacto(id_contacto):
     new_suscripcion = request.form.get['suscripcion']
 
     contacto= usuarios.modificar_contacto(id_contacto,new_gamertag,new_email,new_telefono,new_motivo,new_mensaje,new_suscripcion)
+
     if contacto:
         return jsonify({"mensaje":"El contacto se modifico correctamente"}), 201
     else:
         return jsonify({"mesaje":"Error al modificar contacto. Contacto no encontrado"}), 403
 
-@app.route("/contactos/<int:id_contactos>", methods=["DELETE"])
+@app.route("/contactos/<int:id_contacto>", methods=["DELETE"])
 def eliminar_contacto(id_contacto):
     contacto= usuarios.mostrar_contacto(id_contacto)
     if contacto:        
