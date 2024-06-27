@@ -7,33 +7,22 @@
     <title>Agregar contacto</title>
     <link rel="stylesheet" href="./static/css/style.css">
 </head>
-<body>
-    <header>
-        <nav class="navbar-index ">
-            <img class="logo-nav" src="./static/imagenes/logosmall.webp" alt="logo Codo a Codo Gaming">
-        </nav>
-    </header>
-    <div class="logo-centrado">
-        <img src="./static/imagenes/logogaming.webp" alt="logo">
-    </div>
+<body class="container">
+    <nav class="navbar"><a href="index.html" class="button">Menu principal</a></nav>
     <h1>Eliminar Contacto</h1><br>
-    <table id="contactos-table"> <!-- Se crea una tabla para mostrar los contactos. -->
+    <table id="contactos-table" class="listado"> <!-- Se crea una tabla para mostrar los contactos. -->
         <thead> <!--Encabezado de la tabla con columnas para código,
             descripción, cantidad, precio y acciones.-->
             <tr>                
                 <th>Gamertag</th>
                 <th>EMail</th>
                 <th align="right">Telefono</th>                
-                <th align="center">Motivo</th>
-                <th>Mensaje</th>
                 <th>Suscripcion</th>
+                <th>Eliminar</th>
             </tr>
         </thead>
         <tbody> </tbody>
     </table><br>
-    <div class="contenedor-centrado">
-        <a href="index.html">Menu principal</a>
-    </div>
     <script>
         const URL = "http://127.0.0.1:5000/"
 
@@ -56,11 +45,10 @@
                         <td>${contacto.gamertag}</td> 
                         <td>${contacto.email}</td>
                         <td align="right">${contacto.telefono}</td>
-                        <td align="center">${contacto.motivo}</td>
-                        <td>${contacto.mensaje}</td>
                         <td align="center">${contacto.suscripcion ? "Si":"No"}</td>
                         <td><button onclick="eliminarContacto('${contacto.id_contacto}')">Eliminar</button></td>
                     `; 
+                    
                 });
             })
             // Captura y maneja errores, mostrando una alerta en caso de error al obtener los productos.

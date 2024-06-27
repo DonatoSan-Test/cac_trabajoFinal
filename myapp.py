@@ -38,31 +38,15 @@ class Usuarios:
         self.conexion.commit()
         return self.cursor.rowcount > 0
       
+usuarios = Usuarios(host="localhost", user="root", password="12345678", database="mybbdd")
 
-# ------------------------------------------------------
-# programa principal
-# ------------------------------------------------------
-##Conexion a la Base de Datos
-usuarios= Usuarios("localhost","root","","mybbdd")
 
-##Agregar un contacto
-#usuario.agregar_contacto("codoAcodo-2024","codoAcodo-2024@gmail.com","1147044000","Consulta","Este es el primer mensaje para codo a codo gaming",1)
-
-##Mostrar un contacto
-#usuario.mostrar_contacto(2)
-
-##Modificar Contacto
-#usuario.modificar_contacto(2,"Fullstack-25","fullstack-25@gmail.com","1145500555","Consulta","Soy fullstack listo para programar",0)
-
-##Listar todos los contactos
-#usuario.listar_contactos()
-#######################################
 app = Flask(__name__)
 CORS(app)
 
 @app.route('/')
 def home():
-    return render_template('home.html', title='Prueba Flask', 
+    return render_template('prueba.html', title='Prueba Flask', 
     heading='Bienvenido a Codo a Codo Gaming', subtitulo="CRUD", items=['Create','Read','Update','Delete'])
 
 # listar todos los contactos
@@ -131,9 +115,3 @@ def eliminar_contacto(id_contacto):
 
 if __name__ == "__main__":
     app.run(debug=True)
-
-
-
-
-
-
