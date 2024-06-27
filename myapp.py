@@ -102,14 +102,22 @@ def agregar_contacto():
     
 @app.route("/contactos/<int:id_contacto>", methods=["PUT"])
 def modificar_contacto(id_contacto):
-    # Capturo los datos del form
-    new_gamertag = request.form.get['gamertag']
+    # Capturo los datos del form  
+    # asi no funciona error en el metodo request.form.get[]
+    """new_gamertag = request.form.get['gamertag']     
     new_email = request.form.get['email']
     new_telefono = request.form.get['telefono']    
     new_motivo = request.form.get['motivo']
     new_mensaje = request.form.get['mensaje']    
-    new_suscripcion = request.form.get['suscripcion']
-
+    new_suscripcion = request.form.get['suscripcion']"""
+    # asi si funciona
+    new_gamertag = request.form['gamertag']     
+    new_email = request.form['email']
+    new_telefono = request.form['telefono']    
+    new_motivo = request.form['motivo']
+    new_mensaje = request.form['mensaje']    
+    new_suscripcion = request.form['suscripcion']
+    
     contacto= usuarios.modificar_contacto(id_contacto,new_gamertag,new_email,new_telefono,new_motivo,new_mensaje,new_suscripcion)
 
     if contacto:
