@@ -14,11 +14,11 @@
         <thead> <!--Encabezado de la tabla con columnas para código,
                 descripción, cantidad, precio y acciones.-->
             <tr>
-                <th>Código</th>
+                <th>Id Contacto</th>
                 <th>Gamertag</th>
                 <th>EMail</th>
                 <th align="right">Telefono</th>                
-                <th align="right">Motivo</th>
+                <th align="center">Motivo</th>
                 <th>Mensaje</th>
                 <th>Suscripcion</th>
             </tr>
@@ -55,13 +55,19 @@
             // Iteramos sobre cada contacto y agregamos filas a la tabla            
             for (let contacto of data) { 
                 let fila = document.createElement('tr'); //Crea una nueva fila de tabla (<tr>) para cada producto.
+                if(contacto.suscripcion){
+                    suscripcion= 'Si';
+                }else{
+                    suscripcion= 'No';
+                }
+
                 fila.innerHTML= '<td>' + contacto.id_contacto + '</td>' +
                                 '<td>' + contacto.gamertag + '</td>' +
                                 '<td>' + contacto.email + '</td>' +
                                 '<td align="right">' + contacto.telefono + '</td>' +
                                 '<td align="center">' + contacto.motivo + '</td>' +
                                 '<td>' + contacto.mensaje + '</td>' +
-                                '<td align="center">' + contacto.suscripcion + '</td>';
+                                '<td align="center">' + suscripcion + '</td>';
                 // Al subir al servidor, deberá utilizarse la siguiente ruta. 
                 // USUARIO debe ser reemplazado por el nombre de usuario de Pythonanywhere
                 // '<td><img src=https://www.pythonanywhere.com/user/USUARIO/files/home/USUARIO/mysite/static/imagenes/' + 

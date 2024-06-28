@@ -7,6 +7,31 @@ import time
 class Usuarios:
     def __init__(self, host, user, password, database):
         self.conexion= mysql.connector.connect(host=host,user=user,password=password,database=database)
+
+        self.cursor = self.conexion.cursor()
+        # Intentamos seleccionar la base de datos
+        try:
+            self.cursor.execute(f"USE {database}")
+        except mysql.connector.Error as err:
+            # Si la base de datos no existe, la creamos
+            if err.errno == mysql.connector.errorcode.ER_BAD_DB_ERROR:
+                self.cursor.execute(f"CREATE DATABASE {database}")
+                self.conexion.database = database
+            else:
+                raise err
+        # Una vez que la base de datos está establecida, creamos la tabla si no existe
+        self.cursor.execute('''CREATE TABLE IF NOT EXISTS `contactos` (
+                                `id_contacto` INT(3) NOT NULL AUTO_INCREMENT , 
+                                `gamertag` VARCHAR(15) NOT NULL , 
+                                `email` VARCHAR(35) NOT NULL , 
+                                `telefono` VARCHAR(10) NULL , 
+                                `motivo` VARCHAR(10) NOT NULL , 
+                                `mensaje` VARCHAR(255) NOT NULL , 
+                                `suscripcion` INT(1) NULL , 
+                                PRIMARY KEY (`id_contacto`)) ENGINE = InnoDB;''')
+        self.conexion.commit()
+        # Cerrar el cursor inicial y abrir uno nuevo con el parámetro dictionary=True
+        self.cursor.close()
         self.cursor= self.conexion.cursor(dictionary=True)
 
     def agregar_contacto(self,gamertag,email,telefono,motivo,mensaje,suscripcion): #probado exitosamente
@@ -38,11 +63,16 @@ class Usuarios:
         self.conexion.commit()
         return self.cursor.rowcount > 0
       
-usuarios = Usuarios(host="localhost", user="root", password="12345678", database="mybbdd")
-
-
+#----------------------------------------------
+# PROGRAMA PRINCIPAL
+#----------------------------------------------
+usuarios = Usuarios(host="127.0.0.1", user="root", password="", database="myprueba")
+#usuarios = Usuarios(host="DonatoSan.mysql.pythonanywhere-services.com", user="DonatoSan", password="gamer2024", database="DonatoSan$mybbdd")
 app = Flask(__name__)
 CORS(app)
+
+#ruta_destino= './static/imagenes/'
+ruta_destino= '/home/DonatoSan/mysite/static/imagenes/'
 
 @app.route('/')
 def home():
