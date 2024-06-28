@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listado de contactos</title>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+    <title>Gaming 🚀</title>
     <link rel="stylesheet" href="./static/css/style.css">
 </head>
 <body class="container">
@@ -28,8 +29,8 @@
     <script>
         // Al subir al servidor, deberá utilizarse la siguiente ruta.
         // USUARIO debe ser reemplazado por el nombre de usuario de Pythonanywhere
-        // const URL = "https://USUARIO.pythonanywhere.com/"
-        const URL = "http://127.0.0.1:5000/"
+        const URL = "http://donatosan.pythonanywhere.com/"
+        //const URL = "http://127.0.0.1:5000/"
         
         // Realizamos la solicitud GET al servidor para obtener todos los contactos.
         fetch(URL + 'contactos')
@@ -82,7 +83,7 @@
         //Captura y maneja errores, mostrando una alerta en caso de error al obtener los contactos.
         .catch(function (error) {
             // Código para manejar errores
-            alert('Error al obtener los productos.');
+            alert('Error al obtener los CONTACTOS.');
         });
     </script>
 </body>

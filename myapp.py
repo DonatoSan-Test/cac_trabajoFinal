@@ -66,8 +66,8 @@ class Usuarios:
 #----------------------------------------------
 # PROGRAMA PRINCIPAL
 #----------------------------------------------
-usuarios = Usuarios(host="127.0.0.1", user="root", password="", database="myprueba")
-#usuarios = Usuarios(host="DonatoSan.mysql.pythonanywhere-services.com", user="DonatoSan", password="gamer2024", database="DonatoSan$mybbdd")
+#usuarios = Usuarios(host="127.0.0.1", user="root", password="", database="mybbdd")
+usuarios = Usuarios(host="DonatoSan.mysql.pythonanywhere-services.com", user="DonatoSan", password="gamer2024", database="DonatoSan$mybbdd")
 app = Flask(__name__)
 CORS(app)
 

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
     <title>Gaming 🚀</title>
     <link rel="stylesheet" href="./static/css/style.css">
 </head>
@@ -16,7 +17,7 @@
     <div class="logo-centrado">
         <img src="./static/imagenes/logogaming.webp" alt="logo">
     </div>
-    <h1>Eliminar Contacto</h1><br>
+    <h1>Modificar Contacto</h1><br>
     <!-- Contenedor principal que será controlado por JavaScript. Este
     contenedor tendrá dos formularios. -->
     <div id="app">
@@ -64,9 +65,9 @@
     </div>
     <script>
         // Al subir al servidor, deberá utilizarse la siguiente ruta.
-        // const URL = "https://USUARIO.pythonanywhere.com/"
+        const URL = "http://donatosan.pythonanywhere.com/"
         // USUARIO debe ser reemplazado por el nombre de usuario de Pythonanywhere
-        const URL = "http://127.0.0.1:5000/"
+        //const URL = "http://127.0.0.1:5000/"
         
         // Variables de estado para controlar la visibilidad y los datos del formulario
         let id_contacto = '';
