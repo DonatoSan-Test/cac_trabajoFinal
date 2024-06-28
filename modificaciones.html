@@ -7,16 +7,8 @@
     <title>Gaming 🚀</title>
     <link rel="stylesheet" href="./static/css/style.css">
 </head>
-<body>
-    <header>
-        <nav class="navbar-index ">
-            <img class="logo-nav" src="./static/imagenes/logosmall.webp" alt="logo Codo a Codo Gaming">
-        </nav>
-    </header>
-    <div class="logo-centrado">
-        <img src="./static/imagenes/logogaming.webp" alt="logo">
-    </div>
-    <h1>Eliminar Contacto</h1><br>
+<body class="container">
+    <nav class="navbar"><a href="index.html" class="button">Menu principal</a></nav>
     <!-- Contenedor principal que será controlado por JavaScript. Este
     contenedor tendrá dos formularios. -->
     <div id="app">
@@ -25,7 +17,7 @@
         <form id="form-obtener-contacto">
             <label for="id_contacto">Id Contacto:</label>
             <input type="text" id="id_contacto" required><br>
-            <button type="submit">Buscar Contacto</button> <a href="index.html">Menu principal</a>
+            <button type="submit" class="button">Buscar Contacto</button> 
         </form>
         <!-- Segundo formulario: se muestra solo si mostrarDatosContacto
         es verdadero. Llama a la función guardarCambios -->
@@ -57,7 +49,7 @@
                     Suscribite para recibir novedades!
                 </label><br><br> 
                 
-                <button type="submit">Guardar Cambios</button>
+                <button type="submit" class="button">Guardar Cambios</button>
                 <a href="modificaciones.html">Cancelar</a>
             </form>
         </div>

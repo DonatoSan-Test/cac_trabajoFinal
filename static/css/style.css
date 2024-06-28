@@ -1,5 +1,7 @@
 body {
     background-color: #1e3d2f;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #d4e4d2;
 }
 h1{
     color: #d4e4d2;
@@ -22,12 +24,12 @@ h1{
 
 .button {
     display: inline-block;
-    font-size: 1.5em; /* Ajusta el tamaño del texto para pantallas más pequeñas */
+    font-size: 1.5em; 
     background-color: #2e5c3a;
     color: #d4e4d2;
     border: none;
     cursor: pointer;
-    width: 15em; /* Ajusta el ancho del botón para pantallas más pequeñas */
+    width: 15em; 
     height: 2em;
     text-align: center;
     line-height: 2em;
@@ -188,11 +190,10 @@ h1{
     display: block;
 }
 
-/* Responsividad para pantallas de 768px a 1023px */
 @media only screen and (max-width: 900px) {
     .container {
         max-width: 90%;
-        padding-top: 100px; /* Reducir el espacio superior */
+        padding-top: 100px; 
     }
     .contactanos {
         font-size: 1em;
@@ -205,7 +206,7 @@ h1{
 @media only screen and (max-width: 768px) {
     .container {
         max-width: 90%;
-        padding-top: 100px; /* Reducir el espacio superior */
+        padding-top: 100px; 
     }
     .contactanos {
         font-size: 0.9em;
@@ -218,7 +219,7 @@ h1{
 @media only screen and (max-width: 620px) {
     .container {
         max-width: 95%;
-        padding-top: 80px; /* Reducir más el espacio superior */
+        padding-top: 80px; 
     }
     .contactanos {
         font-size: 0.7em;
@@ -234,7 +235,7 @@ h1{
 @media only screen and (max-width: 480px) {
     .container {
         max-width: 99%;
-        padding-top: 60px; /* Reducir aún más el espacio superior */
+        padding-top: 60px; 
     }
     .contactanos {
         font-size: 0.6em;
@@ -250,15 +251,15 @@ h1{
 
 @media only screen and (max-width: 620px) {
     .button {
-        font-size: 1em; /* Reduce el tamaño del texto */
-        width: 12em; /* Reduce el ancho del botón */
+        font-size: 1em; 
+        width: 12em; 
     }
 }
 
 @media only screen and (max-width: 480px) {
     .button {
-        font-size: 0.8em; /* Reduce aún más el tamaño del texto */
-        width: 10em; /* Reduce aún más el ancho del botón */
+        font-size: 0.8em;
+        width: 10em; 
     }
 }
 .logo{
@@ -274,7 +275,6 @@ h1{
     text-align: center;
 }
 
-/* Estilos generales para la tabla */
 .listado {
     border: 1px solid #3b7415;
     width: 100%;
@@ -285,25 +285,93 @@ h1{
 .listado th, .listado td {
     border: 1px solid #3b7415;
     padding: 15px;
-    text-align: center; /* Centra el texto en las celdas */
-    word-wrap: break-word; /* Rompe las palabras largas para evitar que se salgan de las celdas */
+    text-align: center; 
+    word-wrap: break-word; 
 }
 
 .listado th {
     background-color: rgb(150, 240, 123);
     font-weight: 700;
     text-transform: uppercase;
+    color: black;
 }
 
-/* Estilos para las filas al pasar el mouse */
 .listado tbody tr:hover {
     background-color: #2e5c3a;
 }
 
-/* Media query para dispositivos móviles */
 @media (max-width: 768px) {
     .listado th, .listado td {
-        padding: 10px; /* Reducir el padding en dispositivos móviles */
-        font-size: 14px; /* Ajustar el tamaño de fuente para dispositivos móviles */
+        padding: 10px; 
+        font-size: 14px; 
     }
+}
+.modificacioneshtml.form {
+    background-color: rgb(150, 240, 123);
+    color: black;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form select,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+form a {
+    text-decoration: none;
+    color: #007bff;
+    margin-left: 10px;
+}
+
+form a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .navbar {
+        font-size: 16px;
+    }
+
+    form {
+        padding: 15px;
+    }
+
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="tel"],
+    form select,
+    form textarea {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    form button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+/* Specific Styles for Text Overflow in Email Field */
+#emailModificar {
+    white-space: normal;
+    word-break: break-word;
+    font-size: 14px; /* Adjust font size for better fit */
 }
