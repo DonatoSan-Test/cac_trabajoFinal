@@ -74,10 +74,10 @@ CORS(app)
 #ruta_destino= './static/imagenes/'
 ruta_destino= '/home/DonatoSan/mysite/static/imagenes/'
 
-@app.route('/')
-def home():
-    return render_template('prueba.html', title='Prueba Flask', 
-    heading='Bienvenido a Codo a Codo Gaming', subtitulo="CRUD", items=['Create','Read','Update','Delete'])
+#@app.route('/')
+#def home():
+#    return render_template('prueba.html', title='Prueba Flask', 
+#    heading='Bienvenido a Codo a Codo Gaming', subtitulo="CRUD", items=['Create','Read','Update','Delete'])
 
 # listar todos los contactos
 @app.route("/contactos", methods=["GET"])
