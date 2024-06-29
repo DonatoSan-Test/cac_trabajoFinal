@@ -46,7 +46,7 @@ h1{
 
 .container-alta {
     display: grid;
-    max-width: 60%;
+    max-width: 50%;
     height: 40em;
     margin: 0 auto;
     padding-top: 0px;
@@ -60,7 +60,7 @@ h1{
 
 .div-formulario {
     display: grid;
-    max-width: 80%;
+    max-width: 100%;
     font-size: 20px;
     padding: 20px 0px 200px 30px;
     border-radius: 10px;
